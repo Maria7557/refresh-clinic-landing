@@ -39,7 +39,7 @@ This snapshot matches the deployed `doctors-gallery10` revision. It is separate 
 
 ## Assets and review
 
-Patient stories and medical programme content reflect the supplied landing-page materials and require clinic approval before use in advertising. The illustrative hero image is labelled on the page and is not a patient result.
+Patient stories and medical programme content reflect the supplied landing-page materials and require clinic approval before use in advertising. The hero uses illustrative imagery and is not a patient result.
 
 Publication of this repository does not grant a new licence to the clinic branding, photographs, video or patient materials. Obtain appropriate permission for reuse. Included third-party software retains its own licence: `assets/vendor/jsvectormap/LICENSE` and `assets/OFL-Plus-Jakarta-Sans.txt`.
 
