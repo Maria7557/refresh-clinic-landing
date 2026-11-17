@@ -18,12 +18,20 @@ Open http://localhost:8080 in a browser. Serve this directory over HTTP rather t
 
 - `index.html`: page content and structure.
 - `style.css`: responsive design and typography.
+- `refinements.css`: shared detail tokens and visual component refinements, preserving the existing section bounds.
 - `script.js`: galleries and page interactions.
 - `enquiry.js`: consultation questionnaire and editable WhatsApp message.
 - `map.js`: clinic map configuration.
 - `assets/`: images, video, self-hosted fonts and map library required by this page.
 
 The consultation flow opens WhatsApp; it does not send a message automatically. There is no backend or database in this repository. The WhatsApp destination is configured in the HTML and enquiry script.
+
+## Design documentation
+
+- [Project design rules](docs/DESIGN_RULES.md): content and section-size restrictions, component guidance, responsive behaviour, and validation.
+- [Design token specification](docs/DESIGN_TOKENS.md): colour, typography, spacing, shape, and component targets. Expanded-content sizes, spacing, and media limits are implemented in `refinements.css`; remaining general targets are proposals.
+- [Expanded-content review](docs/EXPANDED_CONTENT_REVIEW.md): site comparison, measured expansion issues, and a shared solution for disclosure typography, spacing, media, and state balance.
+- [Agent guidance](AGENTS.md): directs future design work to the shared rules and token specification.
 
 ## Version
 
