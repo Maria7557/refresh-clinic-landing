@@ -67,6 +67,7 @@ For an unrelated brand, reuse naming and hierarchy only after mapping its own pa
 - Preserve heading semantics; visual size is not a reason to change the document outline.
 - Use tabular numerals for aligned pricing and numerical comparisons.
 - Prefer rem units for implementation and support text zoom and responsive wrapping.
+- Verify text spacing across all text roles with the bundled font weights and fallback fonts. Apply all four user overrides together and verify that content stays readable and controls stay usable. Test line height at `1.5`, spacing after paragraphs at `2em`, letter spacing at `0.12em`, and word spacing at `0.16em`. Let content reflow under user overrides. [WCAG 2.2 Text Spacing](https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html)
 - Do not alter font assets as part of documentation work. Validate availability of proposed font weights before future implementation.
 
 ### Spacing, proportion, and balance

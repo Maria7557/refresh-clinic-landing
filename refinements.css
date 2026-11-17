@@ -1,6 +1,7 @@
 /* Visual refinement. Keep the existing section heights; compose within them. */
 :root {
   --paper: #f8f7f3;
+  --white: #fff;
   --ink: #303030;
   --graphite: #3d3d3c;
   --muted: #706d67;
@@ -26,6 +27,11 @@
   --detail-media-max-height: 15rem;
   --doctor-card-mobile-width: 20rem;
 }
+
+/* Add about half a space at each element's font size. */
+* { word-spacing: .087em; }
+body { overflow-wrap: break-word; }
+
 .chapter, .next-step { border-color: var(--line); }
 .eyebrow { margin-bottom: 10px; }
 .section-heading { margin-bottom: 32px; }
@@ -50,17 +56,38 @@
 .testimonials > .section-intro { grid-column: 1; grid-row: 2; margin-bottom: 32px; }
 .testimonials > .chapter-controls { grid-row: 1 / 3; }
 .button { color: var(--ink); border-radius: 9px; }
+.site-header {
+  min-height: var(--header);
+  height: auto;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 8px min(4vw, 28px);
+  background: var(--white);
+  color: var(--ink);
+}
+.site-header a:focus-visible { outline-color: var(--ink); }
 .site-header .button { min-height: 50px; padding: 11px 22px; font-size: 15px; }
-.site-header .brand, .site-footer .brand { color: var(--paper); }
 .glass { border-radius: var(--radius); background: #f8f7f3f0; box-shadow: 0 8px 28px #3030300a; }
 @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .glass {
-    background: #f8f7f3c7;
-    backdrop-filter: blur(22px) saturate(.9);
-    -webkit-backdrop-filter: blur(22px) saturate(.9);
+    background: var(--glass-tint, #f8f7f3c7);
+    backdrop-filter: var(--glass-filter, blur(22px) saturate(.9));
+    -webkit-backdrop-filter: var(--glass-filter, blur(22px) saturate(.9));
   }
 }
-.hero-panel { width: min(100%, 980px); padding: 28px 36px; }
+.hero-panel {
+  --glass-tint: #f8f7f34f;
+  --glass-filter: blur(3px) saturate(.99);
+  border: 0;
+  border-radius: 0;
+}
+@media (width > 700px) {
+  .hero-panel {
+    width: calc(100% + 2 * var(--pad));
+    margin-inline: calc(-1 * var(--pad));
+    padding: 29px calc(37px + var(--pad));
+  }
+}
 .hero h1 { max-width: 900px; font-size: 50px; line-height: 60px; margin-bottom: 18px; }
 .accent-highlight {
   background: linear-gradient(transparent 12%, var(--acccentLight) 12%, var(--acccentLight) 94%, transparent 94%);
@@ -69,7 +96,7 @@
   -webkit-box-decoration-break: clone;
 }
 .hero .intro { max-width: 760px; text-align: center; margin-bottom: 22px; }
-.hero-meta { gap: 28px; color: #56534e; font-size: 13px; }
+.hero-meta { gap: 28px; color: var(--graphite); font-size: 13px; }
 .hero-meta strong { color: var(--ink); font-variant-numeric: tabular-nums; }
 .hero-image { object-position: center 20%; }
 .benefit-strip { min-height: 101px; gap: 40px; }
@@ -381,6 +408,7 @@ input[type=radio] { accent-color: #a54713; }
 @media (min-width: 701px) and (max-width: 1100px) {
   .benefit-strip { min-height: 123px; padding-block: 20px; gap: 24px; }
   .hero-benefits { font-size: 13px; }
+  .process-grid { overflow-wrap: anywhere; }
 }
 
 @media (max-width: 700px) {
@@ -407,7 +435,7 @@ input[type=radio] { accent-color: #a54713; }
   .testimonials > .section-intro { margin-bottom: 20px; }
   .button { font-size: 15px; line-height: 24px; }
   .site-header .button { min-height: 40px; padding: 10px 12px; font-size: 13px; line-height: 20px; gap: 10px; }
-  .hero-panel { width: auto; padding: 22px 18px; box-shadow: 0 3px 14px #30303008; }
+  .hero-panel { padding: 23px 19px; box-shadow: 0 3px 14px #30303008; }
   .hero h1 { font-size: 32px; line-height: 40px; margin-bottom: 16px; }
   .hero .intro { font-size: 16px; line-height: 24px; margin-bottom: 20px; }
   .hero .eyebrow { line-height: 16px; }
@@ -438,7 +466,7 @@ input[type=radio] { accent-color: #a54713; }
   .monitor-grid article { grid-template-columns: 36px minmax(0, 1fr); gap: 14px; }
   .monitor-grid article > span { width: 36px; height: 36px; font-size: 12px; line-height: 18px; margin: 0; }
   .monitoring .button { margin-top: 24px; }
-  .plan summary { grid-template-columns: 22px minmax(0, 1fr) 112px 18px; gap: 8px; min-height: 64px; padding: 12px 0; }
+  .plan summary { grid-template-columns: 22px minmax(0, 1fr) minmax(112px, max-content) 18px; gap: 8px; min-height: 64px; padding: 12px 0; }
   .plan summary > span:not(.plus):not(.plan-index) { font-size: 14px; line-height: 20px; }
   .plan summary > span:not(.plus):not(.plan-index) > span { font-size: 12px; line-height: 18px; }
   .plan summary strong { font-size: 20px; line-height: 26px; }
@@ -475,7 +503,7 @@ input[type=radio] { accent-color: #a54713; }
 }
 
 @media (max-width: 700px) and (max-height: 720px) {
-  .hero-panel { padding: 16px; }
+  .hero-panel { padding: 17px; }
   .hero h1 { font-size: 30px; line-height: 38px; margin-bottom: 12px; }
   .hero .intro { margin-bottom: 14px; }
   .hero .hero-meta { margin-top: 12px; }
