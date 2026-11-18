@@ -1,0 +1,14 @@
+{
+  "description": "Doctor-guided weight management in Dubai. First consultation free when booked online and SLIM Trial.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  },
+  "icons": {
+    "icon": "/refresh-hero-lab/favicon.png"
+  },
+  "title": "Refresh Clinic \u00b7 Medical Weight Management"
+}
