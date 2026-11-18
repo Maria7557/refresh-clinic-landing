@@ -2152,3 +2152,5 @@ main .faq-list summary:focus-visible {outline:3px solid #2678b9;outline-offset:4
  .light-seven .video-story-copy > p:not(.label){margin:12px 0 0;font-size:14px;line-height:1.45;}
  .light-seven .video-story-copy .patient-results-title{font-size:27px;}
 }
+@media(min-width:700px){.light-seven #results.section{padding-top:28px;scroll-margin-top:88px;}}
+@media(max-width:699px){.light-seven #results.section{scroll-margin-top:0;}}
