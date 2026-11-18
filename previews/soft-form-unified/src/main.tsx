@@ -1,0 +1,10 @@
+import React from 'react';
+import {hydrateRoot,createRoot} from 'react-dom/client';
+import LightApp from './LightApp';
+import './soft-form.css';
+const root=document.getElementById('root')!;
+const query=new URLSearchParams(location.search).get('lang');
+if(query==='ru'||query==='en')location.replace(`${import.meta.env.BASE_URL}${query}/`+location.hash);
+const lang=root.dataset.language==='ru'?'ru':'en';
+if(root.hasChildNodes())hydrateRoot(root,<LightApp initialLanguage={lang}/>);
+else createRoot(root).render(<LightApp initialLanguage={lang}/>);

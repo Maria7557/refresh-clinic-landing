@@ -1,0 +1,1 @@
+{"name":"clinic-soft-form-canonical","private":true,"type":"module","scripts":{"build":"node scripts/build.mjs"},"dependencies":{"react":"^19.0.0","react-dom":"^19.0.0"},"devDependencies":{"vite":"^8.0.5","@vitejs/plugin-react":"^6.0.0","typescript":"^5.7.0"}}
