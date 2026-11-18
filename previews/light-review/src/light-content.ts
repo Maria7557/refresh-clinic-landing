@@ -1,6 +1,6 @@
 // Only Light uses this content. Pending verified external sources are explicit.
-export const VIDEO_URL = "/refresh-light/assets/case-22kg-video.mp4";
-export const VIDEO_POSTER = "/refresh-light/assets/case-22kg-poster.jpg";
+export const VIDEO_URL = `${import.meta.env.BASE_URL}assets/case-22kg-video.mp4`;
+export const VIDEO_POSTER = `${import.meta.env.BASE_URL}assets/case-22kg-poster.jpg`;
 export const GOOGLE_URL = "https://www.google.com/maps/place/Refresh+Biohacking+Clinic/@25.2242164,55.2570491,17z/data=!4m8!3m7!1s0x3e5f431a7c9b4f49:0x99f9c1e1f4f0360d!8m2!3d25.2242164!4d55.2570491!9m1!1b1!16s%2Fg%2F11rnhtn0s5?hl=en&entry=ttu&g_ep=EgoyMDI2MTExNi4wIKXMDSoASAFQAw%3D%3D";
 export const lightContent = {
 ru: {
