@@ -1,10 +1,9 @@
 import React from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
-import LegacyApp from "./App";
-import LightApp from "./LightApp";
-const App = import.meta.env.VITE_REFRESH_VARIANT === "light" ? LightApp : LegacyApp;
+import App from "./App";
 import type { Language } from "./i18n";
 import "./index.css";
+import "./original-parity.css";
 
 const root = document.getElementById("root")!;
 // Use the server's language for the first render, never a query-param guess.
